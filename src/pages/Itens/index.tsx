@@ -14,6 +14,7 @@ import {
   Star,
   UtensilsCrossed,
   BadgePlus,
+  SquarePen,
 } from "lucide-react";
 import {
   Dialog,
@@ -116,6 +117,7 @@ const Itens: React.FC = () => {
             <Table>
               <TableHeader>
                 <TableRow>
+                  <TableHead className="w-[140px]">Ações</TableHead>
                   <TableHead className="w-[140px]">Identificador</TableHead>
                   <TableHead className="w-[180px]">Produto</TableHead>
                   <TableHead className="w-[140px]">Status</TableHead>
@@ -126,6 +128,12 @@ const Itens: React.FC = () => {
               <TableBody>
                 {produtos.map((prods) => (
                   <TableRow key={prods.id}>
+                    <TableCell
+                      onClick={() => console.log("Chamou")}
+                      className="cursor-pointer"
+                    >
+                      <SquarePen />
+                    </TableCell>
                     <TableCell>{prods.id}</TableCell>
                     <TableCell>{prods.nome}</TableCell>
                     <TableCell className="font-medium">
